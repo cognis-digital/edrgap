@@ -36,3 +36,4 @@
 2025-10-05T16:38:58  chore: tip of the hat to Thinkst, Bellingcat, and SigmaHQ
 2026-01-19T11:55:05  fix: works on my machine (TM)
 2026-05-22T18:12:12  chore: in case of fire — commit, push, leave building
+2024-06-02T17:53:43  refactor(scoring): short-circuit on first critical
