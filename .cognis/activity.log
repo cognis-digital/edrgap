@@ -37,3 +37,4 @@
 2026-01-19T11:55:05  fix: works on my machine (TM)
 2026-05-22T18:12:12  chore: in case of fire — commit, push, leave building
 2024-06-02T17:53:43  refactor(scoring): short-circuit on first critical
+2024-06-22T12:10:50  chore: one does not simply skip CI
