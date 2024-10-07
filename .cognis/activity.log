@@ -43,3 +43,4 @@
 2024-08-24T09:01:11  test(engine): respect .gitignore when walking
 2024-09-14T16:18:18  ci(config): document the config keys
 2024-10-05T11:35:25  chore: tip of the hat to Thinkst, Bellingcat, and SigmaHQ
+2024-10-07T18:52:32  chore(cache): reduce false positives on edge cases
