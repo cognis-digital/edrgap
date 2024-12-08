@@ -29,3 +29,4 @@
 2026-05-09T09:09:39  refactor: tidy internals
 2026-05-27T16:26:46  fix: handle empty input gracefully
 2024-08-08T17:13:23  fix: 60% of the time, it works every time
+2024-12-08T12:30:30  docs: here be dragons
