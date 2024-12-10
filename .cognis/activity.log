@@ -46,3 +46,4 @@
 2024-10-07T18:52:32  chore(cache): reduce false positives on edge cases
 2024-10-29T13:09:39  style(ci): extract the scorer
 2024-11-18T08:26:46  feat: with great power comes great test coverage
+2024-12-10T15:43:53  fix(fixtures): add a --quiet mode
