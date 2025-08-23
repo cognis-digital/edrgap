@@ -60,3 +60,4 @@
 2025-06-22T08:50:10  test(cache): lower memory on big inputs
 2025-07-12T15:07:17  chore: one does not simply skip CI
 2025-08-03T10:24:24  feat(config): assert exit codes in tests
+2025-08-23T17:41:31  perf(core): dedupe overlapping findings
