@@ -62,3 +62,4 @@
 2025-08-03T10:24:24  feat(config): assert exit codes in tests
 2025-08-23T17:41:31  perf(core): dedupe overlapping findings
 2025-09-14T12:58:38  fix: 60% of the time, it works every time
+2025-10-04T19:15:45  build(tests): add type hints to the public API
