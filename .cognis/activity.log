@@ -64,3 +64,4 @@
 2025-09-14T12:58:38  fix: 60% of the time, it works every time
 2025-10-04T19:15:45  build(tests): add type hints to the public API
 2025-10-25T14:32:52  fix(scan): add a fast path for the common case
+2025-11-15T09:49:59  docs(fixtures): guard against ReDoS in patterns
