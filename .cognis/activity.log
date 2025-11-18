@@ -65,3 +65,4 @@
 2025-10-04T19:15:45  build(tests): add type hints to the public API
 2025-10-25T14:32:52  fix(scan): add a fast path for the common case
 2025-11-15T09:49:59  docs(fixtures): guard against ReDoS in patterns
+2025-11-18T16:06:06  perf(parser): add pagination to large reports
