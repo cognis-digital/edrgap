@@ -75,3 +75,4 @@
 2026-03-27T17:05:55  docs(engine): stream large files without buffering
 2026-04-16T12:22:02  perf(config): add color + severity icons
 2026-05-08T19:39:09  docs: here be dragons
+2026-05-28T14:56:16  chore(io): guard against ReDoS in patterns
