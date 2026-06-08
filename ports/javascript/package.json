@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/edrgap",
+  "version": "0.2.0",
+  "description": "JavaScript port of edrgap (Cognis Neural Suite)",
+  "bin": {
+    "edrgap": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
