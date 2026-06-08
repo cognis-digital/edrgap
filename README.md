@@ -36,7 +36,9 @@ EDR coverage & bypass detector — reconciles MDM + EDR + AD inventories — wit
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Load Inventory
+- ✅ Reconcile
+- ✅ Summarize
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
