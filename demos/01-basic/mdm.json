@@ -1,0 +1,9 @@
+{
+  "devices": [
+    {"device_name": "WIN-CEO-01", "platform": "Windows", "last_sync": "2026-06-08T09:00:00Z"},
+    {"device_name": "WIN-FINANCE-01", "platform": "Windows", "last_sync": "2026-06-08T08:15:00Z"},
+    {"device_name": "WIN-HR-02", "platform": "Windows", "last_sync": "2026-06-08T07:42:00Z"},
+    {"device_name": "WIN-DEV-03", "platform": "Windows", "last_sync": "2026-06-08T06:30:00Z"},
+    {"device_name": "MAC-MKTG-04", "platform": "macOS", "last_sync": "2026-06-08T05:10:00Z"}
+  ]
+}

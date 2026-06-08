@@ -1,0 +1,9 @@
+{
+  "hosts": [
+    {"hostname": "WIN-CEO-01", "agent_version": "7.4.1", "status": "active", "last_checkin": "2026-06-08T09:05:00Z"},
+    {"hostname": "WIN-HR-02", "agent_version": "7.4.1", "status": "disabled", "last_checkin": "2026-06-08T07:50:00Z"},
+    {"hostname": "WIN-DEV-03", "agent_version": "7.3.0", "status": "active", "last_checkin": "2026-05-09T11:20:00Z"},
+    {"hostname": "MAC-MKTG-04", "agent_version": "7.4.1", "status": "active", "last_checkin": "2026-06-08T05:15:00Z"},
+    {"hostname": "LINUX-BUILD-09", "agent_version": "7.4.1", "status": "active", "last_checkin": "2026-06-08T04:00:00Z"}
+  ]
+}

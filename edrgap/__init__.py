@@ -1,11 +1,30 @@
-"""
-EDRGAP — EDR coverage & bypass detector — reconciles MDM + EDR + AD inventories
-Part of the Cognis Neural Suite by Cognis Digital.
-https://cognis.digital · MIT License
-"""
-from edrgap.core import scan, TOOL_NAME, TOOL_VERSION
+"""EDRGAP - EDR coverage & bypass detector.
 
-__version__ = TOOL_VERSION
-__author__ = "Cognis Digital"
-__license__ = "MIT"
-__all__ = ["scan", "TOOL_NAME", "TOOL_VERSION", "__version__"]
+Reconciles MDM, EDR, and Active Directory (AD) host inventories to surface
+endpoints that lack EDR coverage, are stale/not-reporting, or appear in some
+inventories but not others (a classic blue-team blind spot).
+
+Standard library only. Zero install.
+"""
+from .core import (
+    Host,
+    Finding,
+    load_inventory,
+    reconcile,
+    summarize,
+    SEVERITY_ORDER,
+)
+
+TOOL_NAME = "edrgap"
+TOOL_VERSION = "1.0.0"
+
+__all__ = [
+    "Host",
+    "Finding",
+    "load_inventory",
+    "reconcile",
+    "summarize",
+    "SEVERITY_ORDER",
+    "TOOL_NAME",
+    "TOOL_VERSION",
+]

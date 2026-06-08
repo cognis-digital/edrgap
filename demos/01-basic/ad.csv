@@ -1,0 +1,5 @@
+hostname,os,last_logon
+WIN-CEO-01.corp.local,Windows 11,2026-06-08
+WIN-FINANCE-01.corp.local,Windows 10,2026-06-07
+WIN-HR-02.corp.local,Windows 11,2026-06-08
+WIN-DEV-03.corp.local,Windows 11,2026-06-08
