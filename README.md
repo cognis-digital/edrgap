@@ -19,7 +19,7 @@ Security and intelligence teams need EDR coverage & bypass detector — reconcil
 ## Install
 
 ```bash
-pip install cognis-edrgap
+pip install "git+https://github.com/cognis-digital/edrgap.git"
 # or, from this repo:
 pip install -e ".[dev]"
 ```
