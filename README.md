@@ -12,6 +12,31 @@
 
 *Blue Team / Defense — detection, deception, and monitoring for small teams.*
 
+## Usage — step by step
+
+1. Install the CLI (console-script: `edrgap`):
+   ```bash
+   pipx install "git+https://github.com/cognis-digital/edrgap.git"
+   edrgap --version
+   ```
+2. Reconcile your AD/MDM/EDR inventories and print a coverage-gap table:
+   ```bash
+   edrgap scan --ad ad.csv --mdm mdm.csv --edr edr.csv
+   ```
+3. Tune what counts as a finding — flag stale assets and raise the severity floor:
+   ```bash
+   edrgap scan --ad ad.csv --mdm mdm.csv --edr edr.csv --stale-days 14 --min-severity high
+   ```
+4. Emit machine-readable JSON for dashboards or downstream tooling:
+   ```bash
+   edrgap scan --ad ad.csv --mdm mdm.csv --edr edr.csv --format json > gaps.json
+   jq '.[] | select(.severity=="high")' gaps.json
+   ```
+5. In CI, run the scan and let a non-zero exit fail the pipeline on coverage gaps:
+   ```bash
+   edrgap scan --ad ad.csv --mdm mdm.csv --edr edr.csv --min-severity high || exit 1
+   ```
+
 ## Why
 
 Security and intelligence teams need EDR coverage & bypass detector — reconciles MDM + EDR + AD inventories without standing up heavyweight infrastructure. `edrgap` is single-purpose, scriptable, CI-friendly, and self-hostable: point it at a target, get prioritized findings in the format your workflow already speaks (table, JSON, SARIF, HTML), and wire it into agents over MCP when you want it autonomous.
