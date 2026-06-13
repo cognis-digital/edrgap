@@ -12,9 +12,51 @@
 
 *Blue Team / Defense — detection, deception, and monitoring for small teams.*
 
+<!-- cognis:layman:start -->
+## What is this?
+
+EDRGAP helps security teams find computers in their organization that are missing or have broken antivirus/endpoint protection (called an EDR agent). You point it at your device lists — from Active Directory, your mobile device manager, or your EDR platform — and it cross-references them to show you exactly which machines have no protection, which have a broken or silent agent, and which devices showed up out of nowhere. It produces a plain summary table, a JSON report, or a file you can drop straight into GitHub's code-scanning dashboard, and it is designed for small security teams who want a quick, scriptable answer without deploying complex infrastructure.
+<!-- cognis:layman:end -->
+
 ## Why
 
 Security and intelligence teams need EDR coverage & bypass detector — reconciles MDM + EDR + AD inventories without standing up heavyweight infrastructure. `edrgap` is single-purpose, scriptable, CI-friendly, and self-hostable: point it at a target, get prioritized findings in the format your workflow already speaks (table, JSON, SARIF, HTML), and wire it into agents over MCP when you want it autonomous.
+
+<!-- cognis:install:start -->
+## Install
+
+`edrgap` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/edrgap/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/edrgap/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/edrgap.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/edrgap.git"  # uv
+pip install "git+https://github.com/cognis-digital/edrgap.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/edrgap.git
+cd edrgap && pip install .
+```
+
+Then run:
+```sh
+edrgap --help
+```
+<!-- cognis:install:end -->
 
 ## Install
 
