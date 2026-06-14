@@ -77,6 +77,17 @@ def _render_table(hosts, findings, summary) -> str:
 
 
 def main(argv: Optional[List[str]] = None) -> int:
+    try:
+        return _main(argv)
+    except KeyboardInterrupt:
+        print("\nerror: interrupted", file=sys.stderr)
+        return 130
+    except Exception as exc:  # pragma: no cover
+        print(f"error: unexpected failure: {exc}", file=sys.stderr)
+        return 2
+
+
+def _main(argv: Optional[List[str]] = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
 
@@ -86,6 +97,13 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     if not (args.ad or args.mdm or args.edr):
         parser.error("provide at least one of --ad / --mdm / --edr")
+
+    if args.stale_days < 1:
+        print(
+            f"error: --stale-days must be a positive integer, got {args.stale_days}",
+            file=sys.stderr,
+        )
+        return 2
 
     try:
         ad = load_inventory(args.ad, "ad") if args.ad else {}
@@ -98,7 +116,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         print(f"error: failed to parse inventory: {exc}", file=sys.stderr)
         return 2
 
-    hosts, findings = reconcile(ad, mdm, edr, stale_days=args.stale_days)
+    try:
+        hosts, findings = reconcile(ad, mdm, edr, stale_days=args.stale_days)
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
 
     threshold = _SEV_RANK[args.min_severity]
     findings = [f for f in findings if _SEV_RANK.get(f.severity, 99) <= threshold]

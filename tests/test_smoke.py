@@ -101,7 +101,8 @@ def test_cli_json_output(capsys):
 
 def test_cli_clean_run_exits_zero(capsys):
     # Only a single healthy host -> no findings -> exit 0.
-    import tempfile, json
+    import json
+    import tempfile
     with tempfile.TemporaryDirectory() as d:
         ad_p = os.path.join(d, "ad.csv")
         edr_p = os.path.join(d, "edr.json")

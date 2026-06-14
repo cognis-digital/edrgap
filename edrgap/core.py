@@ -146,9 +146,27 @@ def load_inventory(path: str, source: str) -> Dict[str, Dict[str, Any]]:
     """Load one inventory file. Returns {normalized_hostname: raw_fields}.
 
     ``source`` is one of 'ad', 'mdm', 'edr' (used only for messaging).
+
+    Raises:
+        FileNotFoundError: if the path does not exist.
+        ValueError: if the file cannot be decoded or parsed.
+        OSError: for other I/O errors.
     """
-    with open(path, "r", encoding="utf-8-sig") as fh:
-        rows = _detect_and_load(fh.read())
+    if not path or not str(path).strip():
+        raise ValueError(f"{source}: inventory path must not be empty")
+    try:
+        with open(path, "r", encoding="utf-8-sig") as fh:
+            text = fh.read()
+    except UnicodeDecodeError as exc:
+        raise ValueError(
+            f"{source}: file '{path}' is not valid UTF-8 text: {exc}"
+        ) from exc
+    try:
+        rows = _detect_and_load(text)
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"{source}: '{path}' contains invalid JSON: {exc}"
+        ) from exc
     out: Dict[str, Dict[str, Any]] = {}
     for row in rows:
         raw = _first(row, _HOSTNAME_KEYS)
@@ -184,6 +202,10 @@ def reconcile(
     ad = ad or {}
     mdm = mdm or {}
     edr = edr or {}
+    if not isinstance(stale_days, int) or stale_days < 1:
+        raise ValueError(
+            f"stale_days must be a positive integer, got {stale_days!r}"
+        )
     now = now or datetime.now(timezone.utc)
 
     all_names = set(ad) | set(mdm) | set(edr)
