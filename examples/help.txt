@@ -1,0 +1,17 @@
+$ edrgap-emit --help
+
+usage: edrgap [-h] [--version] {scan} ...
+
+EDR coverage & bypass detector -- reconciles MDM, EDR and Active Directory host inventories to find endpoints with missing, stale, or degraded EDR protection.
+
+positional arguments:
+  {scan}
+    scan      Reconcile inventories and report coverage gaps.
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+Example:
+  edrgap scan --ad ad.csv --mdm mdm.json --edr edr.json
+  edrgap scan --edr edr.json --ad ad.csv --format json

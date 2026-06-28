@@ -1,0 +1,3 @@
+$ edrgap-emit --version
+
+edrgap 0.1.0

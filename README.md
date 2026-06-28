@@ -12,6 +12,56 @@
 
 *Blue Team / Defense — detection, deception, and monitoring for small teams.*
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ edrgap-emit --version
+edrgap 0.1.0
+```
+
+```console
+$ edrgap-emit --help
+usage: edrgap [-h] [--version] {scan} ...
+
+EDR coverage & bypass detector -- reconciles MDM, EDR and Active Directory host inventories to find endpoints with missing, stale, or degraded EDR protection.
+
+positional arguments:
+  {scan}
+    scan      Reconcile inventories and report coverage gaps.
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+Example:
+  edrgap scan --ad ad.csv --mdm mdm.json --edr edr.json
+  edrgap scan --edr edr.json --ad ad.csv --format json
+```
+
+> Blocks above are real `edrgap` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "123456",
+        "title": "Suspicious Activity Detected",
+        "description": "An unknown entity has accessed a sensitive system.",
+        "created_by": "John Doe",
+        "created_at": "2023-02-20T14:30:00Z"
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. Install the CLI (console-script: `edrgap`):
